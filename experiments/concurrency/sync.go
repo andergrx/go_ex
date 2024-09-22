@@ -49,7 +49,7 @@ func op1(s *syncher) {
 	defer s.wg.Done()
 	defer s.mtx.Unlock()
 
-	fmt.Println("Op1...")
+	//fmt.Println("Op1...")
 	for i := 0; i < Append; i++ {
 		words = append(words, "Op1")
 	}
@@ -60,7 +60,7 @@ func op2(s *syncher) {
 	defer s.wg.Done()
 	defer s.mtx.Unlock()
 
-	fmt.Println("Op2...")
+	//fmt.Println("Op2...")
 	for i := 0; i < Append; i++ {
 		words = append(words, "Op2")
 	}
