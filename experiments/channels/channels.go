@@ -17,13 +17,17 @@ func main() {
 	//finished := false
 	for {
 		select {
-		case info := <-ch:
-			fmt.Println("Info:", info)
+		case info, ok := <-ch:
+			if ok {
+				fmt.Println("Info:", info)
+			}
 		case <-done:
 			fmt.Println("Done!")
 			return
 		}
 	}
+
+	//<-done
 
 	//fmt.Println("The End")
 
